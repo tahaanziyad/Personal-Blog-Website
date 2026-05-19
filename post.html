@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Meta Ads taught me about human attention — Mohammed Tahaan Ziyad</title>
+<meta name="description" content="Running ads for real clients taught me more about human psychology than any textbook. Here's what I took away.">
+<meta property="og:title" content="What Meta Ads taught me about human attention">
+<meta property="og:type" content="article">
+<meta name="robots" content="index, follow">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#0D0D0D;--black2:#111111;--black3:#161616;--red:#9D1B19;--red-lt:#C0281F;--cream:#EEE8E2;--cream-d:rgba(238,232,226,0.55);--cream-x:rgba(238,232,226,0.25);--border:rgba(238,232,226,0.07);}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--black);color:var(--cream);overflow-x:hidden;line-height:1.6;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.serif{font-family:'Cormorant Garamond',serif;}
+header{position:sticky;top:0;z-index:200;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--cream);text-decoration:none;letter-spacing:0.06em;}
+.logo span{color:var(--red);}
+nav{display:flex;align-items:center;gap:2rem;}
+nav a{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream-d);text-decoration:none;font-weight:400;transition:color 0.2s;}
+nav a:hover{color:var(--cream);}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.ham span{display:block;width:22px;height:1px;background:var(--cream);}
+.mob-nav{display:none;position:fixed;inset:0;background:var(--black);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:3rem;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;font-style:italic;color:var(--cream);text-decoration:none;}
+.mob-close{position:absolute;top:24px;right:6vw;font-size:1.5rem;color:var(--cream-d);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;}
+
+/* POST HEADER */
+.post-head{background:var(--black);padding:7rem 6vw 5rem;border-bottom:1px solid var(--border);max-width:780px;margin:0 auto;width:100%;}
+.post-head-inner{max-width:780px;}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream-x);text-decoration:none;margin-bottom:2.5rem;transition:color 0.2s;}
+.back-link:hover{color:var(--red);}
+.post-cat{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--red);font-weight:500;margin-bottom:1.2rem;}
+.post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,4rem);font-weight:700;line-height:1.05;color:var(--cream);margin-bottom:1.5rem;}
+.post-meta{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.post-date{font-size:0.65rem;letter-spacing:0.15em;color:var(--cream-x);}
+.post-read{font-size:0.65rem;letter-spacing:0.15em;color:var(--cream-x);}
+.post-author{font-size:0.65rem;letter-spacing:0.15em;color:var(--cream-d);}
+.meta-dot{width:3px;height:3px;border-radius:50%;background:var(--cream-x);}
+
+/* POST BODY */
+.post-body{max-width:680px;margin:0 auto;padding:4rem 6vw 5rem;width:100%;}
+
+.post-body p{font-size:1.05rem;color:var(--cream-d);line-height:1.95;font-weight:300;margin-bottom:1.8rem;}
+.post-body p:last-child{margin-bottom:0;}
+.post-body strong{color:var(--cream);font-weight:400;}
+.post-body em{font-style:italic;color:var(--cream);}
+
+.post-body h2{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:600;color:var(--cream);margin:3rem 0 1.2rem;line-height:1.15;}
+.post-body h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--cream);margin:2.5rem 0 1rem;font-style:italic;}
+
+.post-body blockquote{border-left:2px solid var(--red);padding:1rem 1.5rem;margin:2.5rem 0;background:var(--black3);}
+.post-body blockquote p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--cream);margin-bottom:0;}
+
+.post-divider{display:flex;align-items:center;justify-content:center;gap:0.8rem;margin:3rem 0;}
+.post-divider span{display:block;width:2.5rem;height:1px;background:var(--border);}
+.post-divider i{display:block;width:4px;height:4px;border-radius:50%;background:var(--red);}
+
+/* AUTHOR BOX */
+.author-box{max-width:680px;margin:0 auto;padding:0 6vw 5rem;width:100%;}
+.author-card{background:var(--black3);border:1px solid var(--border);border-radius:4px;padding:2rem;display:flex;align-items:flex-start;gap:1.5rem;}
+.author-photo{width:56px;height:56px;border-radius:50%;background:var(--black2);border:1px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.author-photo img{width:100%;height:100%;object-fit:cover;}
+.author-ph{font-size:0.5rem;color:var(--cream-x);text-align:center;}
+.author-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--cream);margin-bottom:0.25rem;}
+.author-role{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:0.6rem;}
+.author-bio{font-size:0.85rem;color:var(--cream-d);line-height:1.75;font-weight:300;}
+
+/* RELATED */
+.related{background:var(--black2);padding:4rem 6vw;border-top:1px solid var(--border);}
+.s-tag{font-size:0.6rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--red);margin-bottom:1.8rem;display:flex;align-items:center;gap:0.8rem;font-weight:500;}
+.s-tag::after{content:'';flex:none;display:block;width:28px;height:1px;background:var(--red);}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+.related-item{background:var(--black2);padding:1.8rem;text-decoration:none;color:inherit;transition:background 0.2s;}
+.related-item:hover{background:var(--black3);}
+.ri-cat{font-size:0.58rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--red);margin-bottom:0.6rem;display:block;}
+.ri-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--cream);line-height:1.35;transition:color 0.2s;}
+.related-item:hover .ri-title{color:var(--red);}
+
+/* FOOTER */
+footer{background:var(--black2);padding:1.8rem 6vw;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.f-logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--cream);opacity:0.6;}
+.f-links{display:flex;gap:1.5rem;}
+.f-links a{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream-x);text-decoration:none;transition:color 0.2s;}
+.f-links a:hover{color:var(--cream-d);}
+.f-copy{font-size:0.58rem;letter-spacing:0.12em;color:var(--cream-x);opacity:0.5;}
+
+@media(max-width:768px){
+  nav{display:none;}.ham{display:flex;}
+  .related-grid{grid-template-columns:1fr;}
+  footer{flex-direction:column;gap:1rem;text-align:center;}.f-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">MTZ<span>.</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="ham" onclick="openMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="closeMenu()">✕</button>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="blog.html" onclick="closeMenu()">Blog</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<div class="post-head">
+  <a class="back-link" href="blog.html">← Back to Blog</a>
+  <p class="post-cat">Marketing</p>
+  <h1 class="post-title serif">What Meta Ads taught me about human attention</h1>
+  <div class="post-meta">
+    <span class="post-author">Mohammed Tahaan Ziyad</span>
+    <span class="meta-dot"></span>
+    <span class="post-date">January 2026</span>
+    <span class="meta-dot"></span>
+    <span class="post-read">5 min read</span>
+  </div>
+</div>
+
+<div class="post-body">
+  <p>When I started running Meta Ads for clients at The Growth Waves, I thought the job was mostly technical. Set the targeting, write some copy, hit publish, read the numbers. I was wrong about almost everything.</p>
+
+  <p>What running real campaigns — with real budgets and real clients waiting for results — actually teaches you is something no course covers well: <strong>people are not rational.</strong> They scroll, they glance, they feel, they move on. You have maybe one second to exist for them.</p>
+
+  <h2 class="serif">The scroll is the ultimate test</h2>
+
+  <p>A Meta feed is one of the most competitive attention environments ever created. Every single post, ad, reel, and story is fighting for the same finite resource: a human being's willingness to pause. Most ads fail this test not because they're badly designed, but because they don't answer the one question every scrolling thumb is asking — "is this worth stopping for?"</p>
+
+  <blockquote><p>"Attention is not given. It's earned in the first frame."</p></blockquote>
+
+  <p>The first image or video frame is everything. I started thinking about it less as an ad and more as a question being asked of the viewer. What do they see in 0.5 seconds? Does it feel familiar enough to register, and different enough to interrupt?</p>
+
+  <h2 class="serif">Data is just behaviour made visible</h2>
+
+  <p>Every click, every skip, every 3-second video view is someone making a decision. The metrics are just a record of those decisions at scale. When I started reading the numbers this way — as a trail of human choices rather than a performance report — something clicked.</p>
+
+  <p>A low CTR on an ad isn't a design problem. It's a <em>relevance</em> problem. The right people aren't seeing it, or the right people are seeing it but don't believe the promise. Both are fixable, but only if you understand what question you're actually answering.</p>
+
+  <div class="post-divider"><span></span><i></i><span></span></div>
+
+  <p>Three months at TGW didn't make me an expert. But it gave me something more useful than expertise at this stage: a working intuition about how attention actually behaves in the wild, built from watching real people make real choices in real time.</p>
+
+  <p>That's the kind of thing textbooks can describe but can't give you. You have to earn it one campaign at a time.</p>
+</div>
+
+<div class="author-box">
+  <div class="author-card">
+    <div class="author-photo"><span class="author-ph">Photo</span></div>
+    <div>
+      <p class="author-name serif">Mohammed Tahaan Ziyad</p>
+      <p class="author-role">Marketing Graduate · Digital Strategist</p>
+      <p class="author-bio">BBA graduate from Central University of Karnataka, specialising in Marketing. Writing about brands, books, and the way people think.</p>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <p class="s-tag">Related posts</p>
+  <div class="related-grid">
+    <a class="related-item" href="post.html">
+      <span class="ri-cat">Essays</span>
+      <p class="ri-title serif">On being early in your career and not pretending otherwise</p>
+    </a>
+    <a class="related-item" href="post.html">
+      <span class="ri-cat">Marketing</span>
+      <p class="ri-title serif">Why most brand voices sound the same — and how to fix it</p>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <span class="f-logo">Mohammed Tahaan Ziyad</span>
+  <div class="f-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  </div>
+  <span class="f-copy">© 2025 · All rights reserved</span>
+</footer>
+
+<script>
+function openMenu(){document.getElementById('mobNav').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('mobNav').classList.remove('open');document.body.style.overflow='';}
+</script>
+</body>
+</html>
