@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Mohammed Tahaan Ziyad</title>
+<meta name="description" content="Get in touch with Mohammed Tahaan Ziyad — marketing graduate, digital strategist, and writer.">
+<meta property="og:title" content="Contact — Mohammed Tahaan Ziyad">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tahaanziyad.com/contact.html">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{--black:#0D0D0D;--black2:#111111;--black3:#161616;--red:#9D1B19;--red-lt:#C0281F;--cream:#EEE8E2;--cream-d:rgba(238,232,226,0.55);--cream-x:rgba(238,232,226,0.25);--border:rgba(238,232,226,0.07);}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--black);color:var(--cream);overflow-x:hidden;line-height:1.6;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5;}
+.serif{font-family:'Cormorant Garamond',serif;}
+header{position:sticky;top:0;z-index:200;background:rgba(13,13,13,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:64px;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--cream);text-decoration:none;letter-spacing:0.06em;}
+.logo span{color:var(--red);}
+nav{display:flex;align-items:center;gap:2rem;}
+nav a{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream-d);text-decoration:none;font-weight:400;transition:color 0.2s;}
+nav a:hover,nav a.active{color:var(--cream);}
+nav a.active{border-bottom:1px solid var(--red);padding-bottom:2px;}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.ham span{display:block;width:22px;height:1px;background:var(--cream);}
+.mob-nav{display:none;position:fixed;inset:0;background:var(--black);z-index:300;flex-direction:column;align-items:center;justify-content:center;gap:3rem;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:400;font-style:italic;color:var(--cream);text-decoration:none;}
+.mob-close{position:absolute;top:24px;right:6vw;font-size:1.5rem;color:var(--cream-d);cursor:pointer;background:none;border:none;font-family:'DM Sans',sans-serif;}
+
+.page-head{background:var(--black);padding:8rem 6vw 5rem;border-bottom:1px solid var(--border);}
+.page-eyebrow{font-size:0.62rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--red);font-weight:500;margin-bottom:1.2rem;opacity:0;animation:fadeUp 0.9s 0.1s forwards;}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,7rem);font-weight:700;line-height:0.88;color:var(--cream);margin-bottom:1.2rem;opacity:0;animation:fadeUp 0.9s 0.25s forwards;}
+.page-title em{font-style:italic;color:var(--red);}
+.page-sub{font-size:0.95rem;color:var(--cream-d);max-width:480px;line-height:1.85;font-weight:300;opacity:0;animation:fadeUp 0.9s 0.4s forwards;}
+
+.contact-body{display:grid;grid-template-columns:1fr 1fr;gap:6rem;padding:5rem 6vw;align-items:start;}
+
+.s-tag{font-size:0.6rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--red);margin-bottom:1.8rem;display:flex;align-items:center;gap:0.8rem;font-weight:500;}
+.s-tag::after{content:'';flex:none;display:block;width:28px;height:1px;background:var(--red);}
+
+.c-links{display:flex;flex-direction:column;gap:0.7rem;margin-bottom:3rem;}
+.c-link{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem;background:var(--black3);border:1px solid var(--border);border-radius:4px;text-decoration:none;color:inherit;transition:border-color 0.25s,transform 0.2s;}
+.c-link:hover{border-color:rgba(157,27,25,0.5);transform:translateX(4px);}
+.c-link svg{width:16px;height:16px;color:var(--red);flex-shrink:0;}
+.c-lbl{font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--cream-x);display:block;margin-bottom:2px;}
+.c-val{font-size:0.9rem;color:var(--cream);font-weight:400;}
+
+.avail-box{background:var(--black3);border:1px solid var(--border);border-radius:4px;padding:1.5rem;}
+.avail-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4CAF50;margin-right:0.5rem;animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+.avail-text{font-size:0.82rem;color:var(--cream-d);}
+.avail-sub{font-size:0.75rem;color:var(--cream-x);margin-top:0.3rem;line-height:1.6;}
+
+/* FORM */
+.form-side{}
+.form-group{margin-bottom:1.4rem;}
+label{display:block;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--cream-x);margin-bottom:0.6rem;font-weight:400;}
+input,textarea{
+  width:100%;background:var(--black3);border:1px solid var(--border);
+  border-radius:4px;padding:0.9rem 1rem;
+  font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:300;
+  color:var(--cream);outline:none;
+  transition:border-color 0.2s;
+  resize:none;
+}
+input::placeholder,textarea::placeholder{color:var(--cream-x);}
+input:focus,textarea:focus{border-color:rgba(157,27,25,0.6);}
+textarea{min-height:140px;}
+.btn-red{background:var(--red);color:var(--cream);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.9rem 2rem;border-radius:4px;border:1px solid var(--red);font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background 0.25s;width:100%;}
+.btn-red:hover{background:var(--red-lt);}
+.form-note{font-size:0.7rem;color:var(--cream-x);margin-top:0.8rem;text-align:center;}
+
+.success-msg{display:none;background:var(--black3);border:1px solid rgba(76,175,80,0.3);border-radius:4px;padding:1.5rem;text-align:center;margin-top:1rem;}
+.success-msg p{font-size:0.9rem;color:var(--cream-d);}
+.success-msg strong{color:var(--cream);}
+
+footer{background:var(--black2);padding:1.8rem 6vw;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);}
+.f-logo{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--cream);opacity:0.6;}
+.f-links{display:flex;gap:1.5rem;}
+.f-links a{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream-x);text-decoration:none;transition:color 0.2s;}
+.f-links a:hover{color:var(--cream-d);}
+.f-copy{font-size:0.58rem;letter-spacing:0.12em;color:var(--cream-x);opacity:0.5;}
+
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.85s ease,transform 0.85s ease;}
+.reveal.on{opacity:1;transform:translateY(0);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:768px){
+  nav{display:none;}.ham{display:flex;}
+  .contact-body{grid-template-columns:1fr;gap:3rem;}
+  footer{flex-direction:column;gap:1rem;text-align:center;}.f-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">MTZ<span>.</span></a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+  <div class="ham" onclick="openMenu()"><span></span><span></span><span></span></div>
+</header>
+
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" onclick="closeMenu()">✕</button>
+  <a href="index.html" onclick="closeMenu()">Home</a>
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="blog.html" onclick="closeMenu()">Blog</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<div class="page-head">
+  <p class="page-eyebrow">Get in touch</p>
+  <h1 class="page-title serif">Let's <em>talk.</em></h1>
+  <p class="page-sub">Whether you're a recruiter, a reader, or someone who wants to argue about a book — I'm easy to reach. I reply to every message.</p>
+</div>
+
+<div class="contact-body reveal">
+  <div>
+    <p class="s-tag">Find me here</p>
+    <div class="c-links">
+      <a class="c-link" href="mailto:tahaan6361@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        <div><span class="c-lbl">Email</span><span class="c-val">tahaan6361@gmail.com</span></div>
+      </a>
+      <a class="c-link" href="https://instagram.com/a_cowards_worth" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <div><span class="c-lbl">Instagram</span><span class="c-val">@a_cowards_worth</span></div>
+      </a>
+      <a class="c-link" href="https://linkedin.com/in/tahaanziyad" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>
+        <div><span class="c-lbl">LinkedIn</span><span class="c-val">linkedin.com/in/tahaanziyad</span></div>
+      </a>
+    </div>
+
+    <div class="avail-box">
+      <p class="avail-text"><span class="avail-dot"></span><strong>Open to opportunities</strong></p>
+      <p class="avail-sub">Currently looking for marketing roles. If you have a position or project that fits, I'd love to hear about it.</p>
+    </div>
+  </div>
+
+  <div class="form-side">
+    <p class="s-tag">Send a message</p>
+    <form id="contactForm" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input type="text" id="name" name="name" placeholder="Mohammed Ali" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
+      </div>
+      <button type="submit" class="btn-red" id="submitBtn">Send Message</button>
+      <p class="form-note">I reply within 24 hours.</p>
+    </form>
+    <div class="success-msg" id="successMsg">
+      <p><strong>Message sent.</strong> I'll get back to you soon.</p>
+    </div>
+    <div class="success-msg" id="errorMsg" style="display:none;border-color:rgba(157,27,25,0.4);">
+      <p>Something went wrong. Try emailing me directly at <strong>tahaan6361@gmail.com</strong></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="f-logo">Mohammed Tahaan Ziyad</span>
+  <div class="f-links">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  </div>
+  <span class="f-copy">© <span id="yr"></span> · All rights reserved</span>
+</footer>
+
+<script>
+document.getElementById("yr").textContent=new Date().getFullYear();
+function openMenu(){document.getElementById('mobNav').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('mobNav').classList.remove('open');document.body.style.overflow='';}
+const reveals=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on');}),{threshold:0.08});
+reveals.forEach(el=>ro.observe(el));
+
+async function handleSubmit(e){
+  e.preventDefault();
+  const btn=document.getElementById('submitBtn');
+  const form=document.getElementById('contactForm');
+  const success=document.getElementById('successMsg');
+  const error=document.getElementById('errorMsg');
+  btn.textContent='Sending…';btn.disabled=true;
+  const data=new FormData(form);
+  try{
+    const res=await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID',{method:'POST',body:data,headers:{Accept:'application/json'}});
+    if(res.ok){form.style.display='none';success.style.display='block';}
+    else{throw new Error();}
+  }catch{
+    btn.textContent='Send Message';btn.disabled=false;
+    error.style.display='block';
+  }
+}
+</script>
+</body>
+</html>
